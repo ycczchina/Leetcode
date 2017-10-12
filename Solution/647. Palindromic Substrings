@@ -1,3 +1,4 @@
+//Similar to 413. Arithmetic Slices
 class Solution {
 public:
     int countSubstrings(string s) {
