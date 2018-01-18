@@ -1,0 +1,14 @@
+class Solution(object):
+    def nextGreatestLetter(self, letters, target):
+        """
+        :type letters: List[str]
+        :type target: str
+        :rtype: str
+        """
+        leng = len(letters)
+        if letters[leng - 1] <= target:
+            return letters[0]
+        else:
+            for i in range(0, leng):
+                if letters[i] > target:
+                    return letters[i]
