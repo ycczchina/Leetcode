@@ -1,0 +1,14 @@
+import collections
+class Solution(object):
+    def shortestCompletingWord(self, licensePlate, words):
+        """
+        :type licensePlate: str
+        :type words: List[str]
+        :rtype: str
+        """
+        d = collections.Counter(i.lower() for i in licensePlate if i.isalpha())
+        res = None
+        for word in words:
+            if (not res or len(word) < len(res)) and not d - collections.Counter(word.lower()):
+                res = word
+        return res
